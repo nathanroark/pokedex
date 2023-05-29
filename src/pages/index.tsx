@@ -18,14 +18,17 @@ const Home: NextPage = () => {
       <main className=" flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#141414] to-[#242424]">
         <div className="container flex flex-col items-center justify-center gap-12 px-3 py-16">
           <div className="flex flex-row">
-            <Image
-              src={Pokeball}
-              alt=""
-              width={128}
-              height={128}
-              className="pr-8"
-            />
-            <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
+            <div className="h-16 w-16 sm:h-32 sm:w-32">
+              <Image
+                src={Pokeball}
+                alt=""
+                width={128}
+                height={128}
+                className='h-full sm:h-32 sm:w-32'
+              />
+            </div>
+            <div className="p-2"></div>
+            <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem] pt-1 sm:pt-4">
               <span className="text-[#eb312e]">Poké</span>dex
             </h1>
           </div>
