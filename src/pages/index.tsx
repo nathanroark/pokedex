@@ -1,11 +1,14 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import PokedexCard from "~/components/pokedexCard";
-import Pokeball from '~/images/pokeball.png'
 import Image from 'next/image';
+import { api } from "~/utils/api";
 
 const Home: NextPage = () => {
   const pokedexNumbers = 251
+
+  const query = api.pokemon.getPokemonById.useQuery({ id: 1 });
+  const animation = query.isSuccess ? "" : "animate-spin"
 
   return (
     <>
@@ -20,15 +23,15 @@ const Home: NextPage = () => {
           <div className="flex flex-row">
             <div className="h-16 w-16 sm:h-32 sm:w-32">
               <Image
-                src={Pokeball}
+                src={"/pokeball.png"}
                 alt=""
                 width={128}
                 height={128}
-                className='h-full sm:h-32 sm:w-32'
+                className={`h-full sm:h-32 sm:w-32 ${animation} duration-1000 hover:bounceNew p-4`}
               />
             </div>
             <div className="p-2"></div>
-            <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem] pt-1 sm:pt-4">
+            <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem] sm:pt-4">
               <span className="text-[#eb312e]">Poké</span>dex
             </h1>
           </div>
