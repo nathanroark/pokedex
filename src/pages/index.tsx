@@ -8,7 +8,7 @@ const Home: NextPage = () => {
   const pokedexNumbers = 251
 
   const query = api.pokemon.getPokemonById.useQuery({ id: 1 });
-  const animation = query.isSuccess ? "" : "animate-spin"
+  const animation = query.isSuccess ? "hover:bounceNew" : "animate-spin"
 
   return (
     <>
@@ -27,7 +27,7 @@ const Home: NextPage = () => {
                 alt=""
                 width={128}
                 height={128}
-                className={`h-full sm:h-32 sm:w-32 ${animation} duration-1000 hover:bounceNew p-4`}
+                className={`h-full sm:h-32 sm:w-32 ${animation} duration-1000 p-4`}
               />
             </div>
             <div className="p-2"></div>
